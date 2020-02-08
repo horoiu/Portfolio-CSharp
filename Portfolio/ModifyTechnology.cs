@@ -40,12 +40,6 @@ namespace Portfolio
             // Valoarea lui id_categ se salveaza in selectedTechnologyId, pentru elementul afisat la selectarea unei noi tehnologii in comboBoxTechnology
             selectedTechnologyId = Convert.ToInt32(this.comboBoxTehnology.GetItemText(this.comboBoxTehnology.SelectedValue));
         }
-        private void buttonCancel_Click(object sender, EventArgs e)
-        {
-            emptyModifyTechnologyFields();
-            this.Close();
-        }
-
         private void ModifyTechnology_Load(object sender, EventArgs e)
         {
         }
@@ -87,6 +81,12 @@ namespace Portfolio
                 }
 
             }
+        }
+
+        private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            emptyModifyTechnologyFields();
+            this.Close();
         }
     }
 }

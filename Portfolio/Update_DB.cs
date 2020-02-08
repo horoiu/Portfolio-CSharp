@@ -34,5 +34,26 @@ namespace Portfolio
                 conn.Close(); // Inchidem conexiunea cu Baza de Date
             }
         }
+
+        public static void addTechnologyInDB(string technologyName)
+        {
+            MySqlCommand cmdAddTechnology = new MySqlCommand();
+            cmdAddTechnology.Connection = conn;
+            cmdAddTechnology.CommandText = "INSERT INTO categorie(nume_categorie) VALUES(@technologyName)";
+            try
+            {
+                conn.Open(); // Deschidem conexiunea cu Baza de Date
+                cmdAddTechnology.Parameters.AddWithValue("@technologyName", technologyName);
+                cmdAddTechnology.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                conn.Close(); // Inchidem conexiunea cu Baza de Date
+            }
+        }
     }
 }

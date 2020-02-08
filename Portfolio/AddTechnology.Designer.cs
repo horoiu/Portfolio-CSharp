@@ -41,9 +41,9 @@
             this.labelTechnology.AutoSize = true;
             this.labelTechnology.Location = new System.Drawing.Point(36, 254);
             this.labelTechnology.Name = "labelTechnology";
-            this.labelTechnology.Size = new System.Drawing.Size(63, 13);
+            this.labelTechnology.Size = new System.Drawing.Size(49, 13);
             this.labelTechnology.TabIndex = 0;
-            this.labelTechnology.Text = "Technology";
+            this.labelTechnology.Text = "Add new";
             // 
             // textBoxTechnology
             // 
@@ -60,6 +60,7 @@
             this.buttonAddTehnology.TabIndex = 2;
             this.buttonAddTehnology.Text = "Add";
             this.buttonAddTehnology.UseVisualStyleBackColor = true;
+            this.buttonAddTehnology.Click += new System.EventHandler(this.buttonAddTehnology_Click);
             // 
             // buttonCancelTechnology
             // 
@@ -69,6 +70,7 @@
             this.buttonCancelTechnology.TabIndex = 3;
             this.buttonCancelTechnology.Text = "Cancel";
             this.buttonCancelTechnology.UseVisualStyleBackColor = true;
+            this.buttonCancelTechnology.Click += new System.EventHandler(this.buttonCancelTechnology_Click);
             // 
             // listBoxTechnologies
             // 

@@ -52,7 +52,7 @@ namespace Portfolio
         public static DataTable select_Technology()
         {
             // -- Operatia de interogare --
-            // Cautam si aducem din baza de date POrtfolio tabela categorie
+            // Cautam si aducem din baza de date Portfolio tabela categorie
             // toate inregistrarile (toate categoriile) ordonate alfabetic
             MySqlCommand comTechnology = new MySqlCommand();
             comTechnology.Connection = conn;
