@@ -72,10 +72,11 @@ namespace Portfolio
                     {
                         MessageBox.Show("Technology allready in DataBase");
                         emptyAddTechnologyField();
+                        return;
                     }
                 }
 
-                Confirmation c = new Confirmation("Confirm modification?");
+                Confirmation c = new Confirmation("Confirm DataBase entry?");
                 DialogResult dr = c.ShowDialog();
                 if (dr == DialogResult.Yes)
                 {
@@ -88,45 +89,16 @@ namespace Portfolio
                         MessageBox.Show(ex.Message);
                     }
 
-                    MessageBox.Show("Modification successfully performed");
+                    MessageBox.Show("DataBase entry successfully performed");
                     emptyAddTechnologyField();
                     fill_listBoxTechnology();
                 }
                 if (dr == DialogResult.No)
                 {
-                    MessageBox.Show("Modification not performed");
+                    MessageBox.Show("DataBase entry not performed");
                     emptyAddTechnologyField();
                 }
             }
-            
-
-
-            //if (selectedTechnologyId != 0)
-           // {
-               // newTechnologyName = textBoxTehnology.Text;
-               // Confirmation c = new Confirmation("Confirm modification?");
-               // DialogResult dr = c.ShowDialog();
-               // if (dr == DialogResult.Yes)
-               // {
-                 //   try
-                   // {
-                   //     Update_DB.modifyTechnologyInDB(newTechnologyName, selectedTechnologyId);
-                   // }
-                  //  catch (Exception ex)
-                  //  {
-                     //   MessageBox.Show(ex.Message);
-                    //}
-                   // MessageBox.Show("Modification successfully performed");
-                  //  emptyModifyTechnologyFields();
-                  //  this.Close();
-               // }
-              //  if (dr == DialogResult.No)
-              //  {
-                  //  MessageBox.Show("Modification not performed");
-                  //  emptyModifyTechnologyFields();
-               // }
-
-            //}
         }
 
         private void buttonCancelTechnology_Click(object sender, EventArgs e)
