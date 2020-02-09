@@ -77,6 +77,7 @@
             this.Controls.Add(this.buttonYes);
             this.Controls.Add(this.labelConfirmation);
             this.Name = "Confirmation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Confirmation";
             this.Load += new System.EventHandler(this.Confirmation_Load);
             this.ResumeLayout(false);

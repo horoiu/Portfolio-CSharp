@@ -81,6 +81,7 @@
             this.Controls.Add(this.checkedListBoxDeleteTechnologies);
             this.Controls.Add(this.labelDeleteTechnologies);
             this.Name = "DeleteTechnology";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DeleteTechnology";
             this.Load += new System.EventHandler(this.DeleteTechnology_Load);
             this.ResumeLayout(false);

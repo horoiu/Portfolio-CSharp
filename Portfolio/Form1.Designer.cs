@@ -74,42 +74,42 @@
             // addTechnologyToolStripMenuItem
             // 
             this.addTechnologyToolStripMenuItem.Name = "addTechnologyToolStripMenuItem";
-            this.addTechnologyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addTechnologyToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.addTechnologyToolStripMenuItem.Text = "Add technology";
             this.addTechnologyToolStripMenuItem.Click += new System.EventHandler(this.addTechnologyToolStripMenuItem_Click_1);
             // 
             // addProjectToolStripMenuItem
             // 
             this.addProjectToolStripMenuItem.Name = "addProjectToolStripMenuItem";
-            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.addProjectToolStripMenuItem.Text = "Add project";
             this.addProjectToolStripMenuItem.Click += new System.EventHandler(this.addProjectToolStripMenuItem_Click_1);
             // 
             // modifyTechnologyToolStripMenuItem
             // 
             this.modifyTechnologyToolStripMenuItem.Name = "modifyTechnologyToolStripMenuItem";
-            this.modifyTechnologyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modifyTechnologyToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.modifyTechnologyToolStripMenuItem.Text = "Modify technology";
             this.modifyTechnologyToolStripMenuItem.Click += new System.EventHandler(this.modifyTechnologyToolStripMenuItem_Click);
             // 
             // modifyProjectToolStripMenuItem
             // 
             this.modifyProjectToolStripMenuItem.Name = "modifyProjectToolStripMenuItem";
-            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modifyProjectToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.modifyProjectToolStripMenuItem.Text = "Modify project";
             this.modifyProjectToolStripMenuItem.Click += new System.EventHandler(this.modifyProjectToolStripMenuItem_Click);
             // 
             // deleteTechnologyToolStripMenuItem
             // 
             this.deleteTechnologyToolStripMenuItem.Name = "deleteTechnologyToolStripMenuItem";
-            this.deleteTechnologyToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteTechnologyToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.deleteTechnologyToolStripMenuItem.Text = "Delete technology";
             this.deleteTechnologyToolStripMenuItem.Click += new System.EventHandler(this.deleteTechnologyToolStripMenuItem_Click);
             // 
             // deleteProjectToolStripMenuItem
             // 
             this.deleteProjectToolStripMenuItem.Name = "deleteProjectToolStripMenuItem";
-            this.deleteProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.deleteProjectToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.deleteProjectToolStripMenuItem.Text = "Delete project";
             this.deleteProjectToolStripMenuItem.Click += new System.EventHandler(this.deleteProjectToolStripMenuItem_Click);
             // 
@@ -184,6 +184,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Portfolio";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);

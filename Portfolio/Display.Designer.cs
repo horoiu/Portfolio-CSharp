@@ -106,6 +106,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelTitle);
             this.Name = "Display";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Display";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -223,6 +223,7 @@
             this.Controls.Add(this.labelTechnologyList);
             this.Controls.Add(this.labelProjectName);
             this.Name = "AddProject";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Project";
             this.Load += new System.EventHandler(this.AddProject_Load);
             this.ResumeLayout(false);

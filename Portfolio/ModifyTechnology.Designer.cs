@@ -102,6 +102,7 @@
             this.Controls.Add(this.labelNewTechnology);
             this.Controls.Add(this.labelSelectTechnology);
             this.Name = "ModifyTechnology";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ModifyTechnology";
             this.Load += new System.EventHandler(this.ModifyTechnology_Load);
             this.ResumeLayout(false);

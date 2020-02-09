@@ -24,7 +24,6 @@ namespace Portfolio
 
         private void fill_ComboBoxTechnology()
         {
-            comboBoxTehnology.Items.Clear();
             // Apelam metoda care interogheaza tabela categorie si depune rezultatul intr-un DataTable
             technologyDT = Interogation_DB.select_Technology();
             // DataTable din care sunt preluate datele pentru comboBoxTechnology
@@ -40,10 +39,6 @@ namespace Portfolio
             // Valoarea lui id_categ se salveaza in selectedTechnologyId, pentru elementul afisat la selectarea unei noi tehnologii in comboBoxTechnology
             selectedTechnologyId = Convert.ToInt32(this.comboBoxTehnology.GetItemText(this.comboBoxTehnology.SelectedValue));
         }
-        private void ModifyTechnology_Load(object sender, EventArgs e)
-        {
-        }
-
         private void emptyModifyTechnologyFields()
         {
             comboBoxTehnology.Text = "";
@@ -53,8 +48,6 @@ namespace Portfolio
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            // Afiseaza in textBoxTechnology valoarea id_cated a elementului curent din comboBoxTechnology
-            //textBoxTehnology.Text = selectedTechnologyId.ToString();
             if (selectedTechnologyId != 0)
             {
                 newTechnologyName = textBoxTehnology.Text;
@@ -72,14 +65,13 @@ namespace Portfolio
                     }
                     MessageBox.Show("Modification successfully performed");
                     emptyModifyTechnologyFields();
-                    this.Close();
+                    fill_ComboBoxTechnology();
                 }
                 if (dr == DialogResult.No)
                 {
                     MessageBox.Show("Modification not performed");
                     emptyModifyTechnologyFields();
                 }
-
             }
         }
 
@@ -88,5 +80,10 @@ namespace Portfolio
             emptyModifyTechnologyFields();
             this.Close();
         }
+
+        private void ModifyTechnology_Load(object sender, EventArgs e)
+        {
+        }
+
     }
 }

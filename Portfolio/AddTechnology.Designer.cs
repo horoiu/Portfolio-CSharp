@@ -101,6 +101,7 @@
             this.Controls.Add(this.textBoxTechnology);
             this.Controls.Add(this.labelTechnology);
             this.Name = "AddTechnology";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add New Technology";
             this.Load += new System.EventHandler(this.AddTechnology_Load);
             this.ResumeLayout(false);
