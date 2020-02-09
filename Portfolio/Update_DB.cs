@@ -66,24 +66,25 @@ namespace Portfolio
             MySqlTransaction tx = conn.BeginTransaction();
             try
             {
-                // Atasez cele doua comenzi adaugImpr si scadFilme tranzactiei tx
+                // Atasez comanda cmdDeleteTechnology tranzactiei tx
                 cmdDeleteTechnology.Transaction = tx;
+
                 foreach (int technologyID in technologyList)
                 {
-                    // Adaug
+                    // Adaug id-ul tehnologiei la query string
                     cmdDeleteTechnology.Parameters.AddWithValue("@technologyID", technologyID);
                     cmdDeleteTechnology.ExecuteNonQuery();
-                    // Golim parametrii utilizati in comanda SQL pentru a-i putea reutiliza
                     cmdDeleteTechnology.Parameters.Clear();
                 }
+
                 // Modificarile devin permanente
                 tx.Commit();
             }
             catch (Exception)
             {
                 // Daca a aparut o eroare in timpul executiei vreuneia dintre operatiile asupra bazei de date
-            // se vor anula si operatiile care au fost facute inaintea erorii
-            tx.Rollback();
+                // se vor anula si operatiile care au fost facute inaintea erorii
+                tx.Rollback();
                 throw;
             }
             finally

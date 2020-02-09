@@ -27,12 +27,8 @@ namespace Portfolio
             technologiesDT = Interogation_DB.select_Technology();
             // DataTable din care sunt preluate datele pentru comboListTechnologies
             checkedListBoxDeleteTechnologies.DataSource = technologiesDT;
-            // Valoarea din coloana id_categ nu se afiseaza in comboListTechnologies
-            //listBoxTechnologies.ValueMember = "id_categ";
             // Denumirea tehnologiei afisata in comboListTechnologies, preluata din:
             checkedListBoxDeleteTechnologies.DisplayMember = "nume_categorie";
-            // Valoarea lui id_categ se salveaza in selectedTechnologyId, pentru elementul afisat la initializarea comboBoxTechnology
-            //selectedTechnologyId = Convert.ToInt32(this.listBoxTechnologies.GetItemText(this.listBoxTechnologies.SelectedValue));
         }
 
         private void empty_checkedListBoxDeleteTechnologies()
@@ -63,14 +59,12 @@ namespace Portfolio
                             listDeleteTechnologies.Add(idTechnology);
                         }
                         Update_DB.deleteTechnologyInDB(listDeleteTechnologies);
-                        // Dupa inregistrarea restituirii o parte din filme au fost restituite iar altele nu, sau toate au fost restituite
-                        // Reincarc in CheckList cu Filme noua lista cu filmele ramase nerestituite
-                        // Pentru asta "resetez" datele din dataTable filmeT (sursa pentru listDeleteTechnologies.DataSource)
+
+                        // Reincarc in CheckList cu tehnologiile ramase du modificare DB
+                        // Pentru asta "resetez" datele din DataTable technologiesDT (sursa pentru listDeleteTechnologies.DataSource)
                         MessageBox.Show("Deletion was succesfull");
                         technologiesDT.Clear();
                         fill_checkedListBoxDeleteTechnology();
-
-                        //listDeleteTechnologies.DataSource = null;
                     }
                     catch (Exception ex)
                     {
@@ -94,7 +88,6 @@ namespace Portfolio
 
         private void DeleteTechnology_Load(object sender, EventArgs e)
         {
-
         }
     }
 }
