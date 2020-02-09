@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Collections; // Pentru ArrayList
 
 namespace Portfolio
 {
@@ -24,7 +23,6 @@ namespace Portfolio
 
         private void fill_listBoxTechnology()
         {
-            //listBoxTechnologies.Items.Clear();
             // Apelam metoda care interogheaza tabela categorie si depune rezultatul intr-un DataTable
             technologiesDT = Interogation_DB.select_Technology();
             // DataTable din care sunt preluate datele pentru comboListTechnologies
@@ -35,11 +33,6 @@ namespace Portfolio
             listBoxTechnologies.DisplayMember = "nume_categorie";
             // Valoarea lui id_categ se salveaza in selectedTechnologyId, pentru elementul afisat la initializarea comboBoxTechnology
             //selectedTechnologyId = Convert.ToInt32(this.listBoxTechnologies.GetItemText(this.listBoxTechnologies.SelectedValue));
-        }
-
-        private void AddTechnology_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void emptyAddTechnologyField()
@@ -76,6 +69,7 @@ namespace Portfolio
                     }
                 }
 
+                //Daca numele tehnologiei nu este in DataBase, se continua cu fereastra de confirmare
                 Confirmation c = new Confirmation("Confirm DataBase entry?");
                 DialogResult dr = c.ShowDialog();
                 if (dr == DialogResult.Yes)
@@ -105,6 +99,11 @@ namespace Portfolio
         {
             emptyAddTechnologyField();
             this.Close();
+        }
+
+
+        private void AddTechnology_Load(object sender, EventArgs e)
+        {
         }
     }
 }

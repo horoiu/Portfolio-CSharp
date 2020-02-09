@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient; // Pentru legatura cu baza de date
 using System.Data; // Pentru DataTable
+using System.Collections; // Pentru ArrayList
 
 namespace Portfolio
 {
@@ -55,5 +56,42 @@ namespace Portfolio
                 conn.Close(); // Inchidem conexiunea cu Baza de Date
             }
         }
+
+        public static void deleteTechnologyInDB(ArrayList technologyList)
+        {
+            MySqlCommand cmdDeleteTechnology = new MySqlCommand("DELETE FROM categorie WHERE (id_categ=@technologyID)", conn);
+            conn.Open();
+
+            // Instantiez si incep o tranzactie
+            MySqlTransaction tx = conn.BeginTransaction();
+            try
+            {
+                // Atasez cele doua comenzi adaugImpr si scadFilme tranzactiei tx
+                cmdDeleteTechnology.Transaction = tx;
+                foreach (int technologyID in technologyList)
+                {
+                    // Adaug
+                    cmdDeleteTechnology.Parameters.AddWithValue("@technologyID", technologyID);
+                    cmdDeleteTechnology.ExecuteNonQuery();
+                    // Golim parametrii utilizati in comanda SQL pentru a-i putea reutiliza
+                    cmdDeleteTechnology.Parameters.Clear();
+                }
+                // Modificarile devin permanente
+                tx.Commit();
+            }
+            catch (Exception)
+            {
+                // Daca a aparut o eroare in timpul executiei vreuneia dintre operatiile asupra bazei de date
+            // se vor anula si operatiile care au fost facute inaintea erorii
+            tx.Rollback();
+                throw;
+            }
+            finally
+            {
+                // Inchidem conexiunea cu baza de date
+                conn.Close();
+            }
+        }
+
     }
 }
